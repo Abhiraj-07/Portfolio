@@ -1,4 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+// import { createRequire } from "module";
+// const require = createRequire(import.meta.url);
 
-export default nextConfig;
+// const nextConfig = {
+//   output: "export",
+//   images: {
+//     remotePatterns: [{ protocol: "https", domains: "drive.google.com" }],
+//   },
+// };
+
+// export default nextConfig;
