@@ -9,7 +9,7 @@ const Footer = () => {
             <p className='text-slate-00' >All Rights Reserved </p>
 
             <span>
-            <Image src="/logo.webp" width={60} height={60} alt="Logo"></Image>
+            <Image src="https://raw.githubusercontent.com/Abhiraj-07/Portfolio/main/public/logo.webp" width={60} height={60} alt="Logo"></Image>
             </span>
         </div>
 

@@ -31,7 +31,7 @@ const Navbar = () => {
           href={"/"}
           className="text-2xl md:text-5xl text-white font-semibold"
         >
-          <Image src="/logo.webp" width={75} height={75} alt="Logo"></Image>
+          <Image  src="/logo.webp" width={75} height={75} alt="Logo"></Image>
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (

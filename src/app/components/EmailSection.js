@@ -15,7 +15,7 @@ const EmailSection = () => {
       subject: e.target.subject.value,
       message: e.target.message.value,
     };
-    let JsonData = JSON.stringify(data); 
+    let JsonData = JSON.stringify(data);
     let endPonit = "api/send";
     let options = {
       method: "POST",
@@ -27,24 +27,31 @@ const EmailSection = () => {
 
     const response = await fetch(endPonit, options);
     let resData = await response.json();
-    console.log(resData);
-    setemailSubmitted(true);
     if (response.status == 200) {
+      setemailSubmitted(true);
       console.log("message sent ");
+      setTimeout(()=>{
+        setemailSubmitted(false)
+      }, 2000)
     } else {
       console.log("error");
     }
   };
 
   return (
-    <section    id="contact" className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative">
+    <section
+      id="contact"
+      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
+    >
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900 to-transparent  rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-1">
-      <h5 className="text-xl font-bold text-white my-2">Let&apos;s Connect</h5>
+        <h5 className="text-xl font-bold text-white my-2">
+          Let&apos;s Connect
+        </h5>
 
         <p className="text-[#ADB7BE]">
-          I&apos;m currently loooking for opportunity , my inbox is always open for
-          all .
+          I&apos;m currently loooking for opportunity , my inbox is always open
+          for all .
         </p>
         <div className="socials flex flex-row gap-3 md:py-3">
           <Link href="https://github.com/Abhiraj-07">
@@ -54,7 +61,7 @@ const EmailSection = () => {
             <Image src={codepen} alt="codepen"></Image>
           </Link>
           <Link href="https://www.linkedin.com/in/abhiraj-trivedi-8a8058225/">
-            <Image src={linkden} alt="linkden" ></Image>
+            <Image src={linkden} alt="linkden"></Image>
           </Link>
         </div>
       </div>
@@ -116,7 +123,7 @@ const EmailSection = () => {
             Send Message{" "}
           </button>
           {emailSubmitted && (
-            <p className="text-green500 text-sm mt-2">
+            <p className="text-green-500 text-sm mt-2">
               email sent successfully
             </p>
           )}

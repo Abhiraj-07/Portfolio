@@ -32,7 +32,7 @@ const TabData = [
     id: "Experience",
     content: (
       <ul className="list-disc pl-2">
-        <li>TDPVista - web developer </li>
+        <li>TDPVista - Intern web developer </li>
       </ul>
     ),
   },

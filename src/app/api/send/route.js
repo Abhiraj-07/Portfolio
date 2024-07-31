@@ -5,16 +5,24 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const fromEmail = process.env.FROM_EMAIL;
 
 export async function POST(req, res) {
-  const body = req;
+  const body = await req.json(); 
   let {email,subject,message} = body;
+
+  if (!email || !subject || !message) {
+    console.log(email+subject+message);
+    return NextResponse.json({ error: "Email, subject, and message fields are required." }, { status: 400 });
+  }
   const { data, error } = await resend.emails.send({
     from: fromEmail,
-    to: ["trivediabhiraj7@gmail.com"],
-    subject: "Hello world",
+    to: ["trivediabhiraj7@gmail.com",email],
+    subject: subject,
     react: (
       <>
+       {/* <p> thank you for contacting me ! </p> */}
       <h1>{subject}</h1>
-        <p> thank you for contacting me ! </p>
+        <p>
+          {message}
+        </p>
       </>
     ),
   });
